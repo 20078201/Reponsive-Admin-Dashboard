@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://kit.fontawesome.com/82b5298eb7.js" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <!-- container start -->
     <div class="container">
         <!-- Navbar section -->
-        <nav class="navbar"> 
+        <nav id="nav" class="navbar"> 
             <div class="nav_icon">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <button data-click="sidebar-menu" class="open_sidebar"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
             </div>
+
             <div class="nav__item__left">
                 <a href="#"><span class="link__heading">Subscribers</span></a>
                 <a href="#"><span class="link__heading">Video Management</span></a>
@@ -28,19 +31,19 @@
             <div class="nav__item__right">
                 <div class="searchbar">
                     <input type="search" class="input__area">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button class="search_glass"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-            </div>
-
-            
+            </div>            
         </nav>
 
         <!-- main area -->
         <main class="main-content">
-            <div class="greeting-logo">
-                <img src="" alt="">
-                <h2>Hello Codersbite</h2>
-                <p>Welcome to your Dashboard</p>
+            <div class="greeting_logo">
+                <img src="img/hello.svg" alt="hello image">
+                <div class="welcome_msg">
+                    <h2 class="welcome_title">Hello Codersbite</h2>
+                    <p class="main-content-text-format">Welcome to your Admin Dashboard</p>
+                </div>
             </div>
             
             <!-- Card Section start here -->
@@ -125,72 +128,78 @@
         </main>
 
         <!-- Sidebar section -->
-        <div class="sidebar">
-            <div class="logo">
-                <i class="fa-solid fa-table-columns"></i>
-                <h1>Dashboard</h1>
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar_title">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Dashboard logo">
+                    <h1 class="side_bar_title">Codersbite</h1>
+                </div>
             </div>
             
-            <div class="dashboard_link active_link">
-                <i class="fa-solid fa-house"></i>
-                <span class="dash-title">Dashboard</span>
+            <div class="sidebar_grid">
+                <div class="dashboard_link active_link">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#" class="side_bar_title">Dashboard</a>
+                </div>
+                <h2 class="dash-title">MNG</h2>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-user-secret"></i>
+                    <a href="#" class="side_bar_title">Admin Management</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-building"></i>
+                    <a href="#" class="side_bar_title">Company Management</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-wrench"></i>
+                    <a href="#" class="side_bar_title">Employee Management</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-warehouse"></i>
+                    <a href="#" class="side_bar_title">Warehouse</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Contracts</a>
+                </div>
+                <h2 class="dash-title">Leave</h2>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Request</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Leave Policy</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Special Days</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Apply for leave</a>
+                </div>
+                <h2 class="dash-title">Payroll</h2>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Payroll</a>
+                </div>
+                <div class="dashboard_link">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <a href="#" class="side_bar_title">Paygrade</a>
+                </div>
+                <div class="dashboard_link sidebar__logout">
+                    <i class="fa-solid fa-power-off"></i>
+                    <a href="#" class="logout">Log Out</a>
+                </div>
+                    
             </div>
+            
+            <i class="fa-solid fa-angles-left sidebar_icon"
+                    id="sidebarIcon"
+                aria-hidden="true">
+            </i>
 
-            <h2 class="dash-title">MNG</h2>
-
-            <div class="dashboard_link">
-                <i class="fa-solid fa-user-secret"></i>
-                <a href="#">Admin Management</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-building"></i>
-                <a href="#">Company Management</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-wrench"></i>
-                <a href="#">Employee Management</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-warehouse"></i>
-                <a href="#">Warehouse</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Contracts</a>
-            </div>
-
-            <h2 class="dash-title">Leave</h2>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Request</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Leave Policy</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Special Days</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Apply for leave</a>
-            </div>
-
-            <h2 class="dash-title">Payroll</h2>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Payroll</a>
-            </div>
-            <div class="dashboard_link">
-                <i class="fa-solid fa-file-contract"></i>
-                <a href="#">Paygrade</a>
-            </div>
-            <div class="sidebar__logout">
-                <i class="fa-solid fa-power-off"></i>
-                <a href="#">Log Out</a>
-            </div>
-        </div>
     </div>
     <!-- container end -->
 </body>
