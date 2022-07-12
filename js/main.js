@@ -66,6 +66,7 @@ const sidebarButton = document.querySelector('[data-click="sidebar-menu"]')
 
 sidebarButton.addEventListener('click', () => {
     if (!sidebarOpen) {
+        sidebar.
         sidebar.classList.add("responsiveness")
         sidebarOpen = true
     }
